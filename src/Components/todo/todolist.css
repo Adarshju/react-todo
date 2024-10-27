@@ -1,20 +1,11 @@
-.todolist {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  position: relative;
-  top: 25px;
-  height: 420px;
-  width: 390px;
-  border: 2px solid black;
-  border-radius: 5px;
-}
+
 .list {
   display: flex;
   height: fit-content;
   align-items: center;
   justify-content: center;
   margin: 10px;
+  gap: 10px;
 }
 .list p {
     background-color: black;
@@ -28,9 +19,12 @@
     /* margin: 0; */
     font-size: 20px;
     margin: 8px 0 0 0;
+    font-weight: 600;
 }
 .list button {
-  height: 30px;
-  margin: 8px 0 0 0;
-  width: 65px;
+    margin: 8px 0 0 0;
+    width: 65px;
+    border: none;
+    height: 35px;
+    border-radius: 6px;
 }

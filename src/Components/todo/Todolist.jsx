@@ -1,22 +1,32 @@
 import React from "react";
 import "./todolist.css";
-const Todolist = () => {
+const Todolist = ({ data, index, makeItdelete, handleDone,handleUndo }) => {
   return (
-    <div className="todolist">
-      <div className="list">
-        <p>hello how are you</p>
-        <button>Delete</button>
-        <button>Done</button>
+    <div className="list">
+      <div>
+        <p>{data.list}</p>
       </div>
-      <div className="list">
-        <p>hello how are you</p>
-        <button style={{ backgroundColor: '#ff0404' }}>Delete</button>
-        <button style={{ backgroundColor: '#0bda0b' }}>Done</button>
+      <div>
+        <button
+          onClick={() => {data.done? handleUndo(index) : makeItdelete(index)}}
+          style={{ backgroundColor: "#ff0404" }}
+        >
+          {data.done ? "Undo" : "Delete"}
+        </button>
+      </div>
+      <div>
+        {!data.done && (
+          <button
+            onClick={() => {
+              handleDone(index);
+            }}
+            style={{ backgroundColor: "#0bda0b" }}
+          >
+            Done
+          </button>
+        )}
       </div>
     </div>
   );
 };
-
 export default Todolist;
-
-
