@@ -4,12 +4,12 @@ const Todolist = ({ data, index, makeItdelete, handleDone,handleUndo }) => {
   return (
     <div className="list">
       <div>
-        <p>{data.list}</p>
+        <p  className={`${data.done? "donelabel": ''}  list-label`}>{data.list}</p>
       </div>
       <div>
         <button
           onClick={() => {data.done? handleUndo(index) : makeItdelete(index)}}
-          style={{ backgroundColor: "#ff0404" }}
+          style={data.done? {backgroundColor: "#1962ff"}:{backgroundColor: "#ff0404"}}
         >
           {data.done ? "Undo" : "Delete"}
         </button>
